@@ -10,5 +10,6 @@
         "bmewburn.vscode-intelephense-client",
 	"amatiasq.sort-imports",
 	"ms-azuretools.vscode-docker"
-    ]
+	],
+	"features": {}
 }

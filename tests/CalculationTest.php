@@ -5,23 +5,40 @@ use Calculation\Calculation;
 final class CalculationTest extends TestCase
 {
     /**
-     * @dataProvider sampleSet
+     * @dataProvider sampleSetPhaseOne
      */
-    public function testCalculationIsDoneCorrectly($input, $expected): void
+    public function testPhaseOneCalculationIsDoneCorrectly($input, $expected): void
     {
         $class = new Calculation($input);
         $this->assertSame($class->calculation(), $expected);
     }
 
-    public function sampleSet(): array
+    /**
+     * @dataProvider sampleSetPhaseTwo
+     */
+    public function testPhaseTwoCalculationIsDoneCorrectly($input, $expected): void
+    {
+        $class = new Calculation($input);
+        $this->assertSame($class->calculation(), $expected);
+    }
+
+    public function sampleSetPhaseOne(): array
     {
         return [
-            "...>..<..."    => ["...>..<...", "{2}"],
-            ">.........<"   => [">.........<", "{5*}"],
-            ">.<"           => [">.<", "{1*}"],
-            ">..<"          => [">..<", "{2}"],
-            ">...<"         => [">...<", "{2*}"],
-            ">....<"        => [">....<", "{3}"]
+            ">.<"                           => [">.<", "1*"],
+            ">..<"                          => [">..<", "2"],
+            ">...<"                         => [">...<", "2*"],
+            ">....<"                        => [">....<", "3"],
+            ">.....<"                       => [">.....<", "3*"],
+            ">.....................<"       => [">.....................<", "11*"],
+            "...>...<.."                    => ["...>...<..", "2*"]
+        ];
+    }
+
+    public function sampleSetPhaseTwo(): array
+    {
+        return [
+            ">.+<"                          => [">.+<", "2*"]
         ];
     }
 }

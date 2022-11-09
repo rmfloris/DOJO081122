@@ -15,18 +15,17 @@ class Calculation2 {
 
     public function __construct(string $path) {
         $this->path = $path;
-        $this->positionTarget = $this->whereIs("target", $this->path);
-        $this->positionOther = $this->whereIs("other", $this->path);
+        $this->positionTarget = $this->whereIs("target");
+        $this->positionOther = $this->whereIs("other");
     }
 
-    private function whereIs($who, $path): int {
-        return strpos($path, $this->$who);
+    private function whereIs($who): int {
+        return strpos($this->path, $this->$who);
     }
 
     public function calculation() {
         while(!$this->havePassed()) {
             $this->nextStep();
-            // return "not passed";    
         }
         return $this->endState();
     }

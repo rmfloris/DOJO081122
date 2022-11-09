@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
-use Calculation\Calculation2;
+use Calculation\Calculation3;
 
 final class CalculationPhaseOneTest extends TestCase
 {
@@ -9,8 +9,8 @@ final class CalculationPhaseOneTest extends TestCase
      */
     public function testCalculationIsDoneCorrectly($input, $expected): void
     {
-        $class = new Calculation2($input);
-        $this->assertSame($class->calculation(), $expected);
+        $class = new Calculation3($input);
+        $this->assertSame($expected, $class->calculation());
     }
 
     public function sampleSet(): array

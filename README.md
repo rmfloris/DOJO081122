@@ -18,3 +18,16 @@ All the previous rules remains.
 INPUT: >.+< 
 OUTPUT: {2*}
 ```
+
+### PHASE 3
+1 target and multiple people in the path. Do not lose him, keep track of all people the target encounters.
+All the previous rules remains.
+
+```
+INPUT: >..<...< 
+OUTPUT: {2,4}
+
+assertLinesMatch(listOf("2,4"),followTarget.follow(">..<...<"))
+assertLinesMatch(listOf("3,4*,6*"),followTarget.follow(">..+<.<++"))
+assertLinesMatch(listOf("5,6*,10"),followTarget.follow("...++>..++...<.<+<.."))
+```

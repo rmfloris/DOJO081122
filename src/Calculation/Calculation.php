@@ -18,7 +18,6 @@ class Calculation {
 
     private function makeSimplePath(string $path) :string {
         return preg_replace("/\+/", "..", $path);
-        // preg_replace('/\\+/', '..', '>.+<', -1, $count);
     }
 
     private function whereIs($who, $path): int {

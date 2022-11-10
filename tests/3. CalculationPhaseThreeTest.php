@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
-use Calculation\Calculation3;
+use Calculation\Calculation4;
 
 final class CalculationPhaseThreeTest extends TestCase
 {
@@ -9,7 +9,7 @@ final class CalculationPhaseThreeTest extends TestCase
      */
     public function testCalculationIsDoneCorrectly($input, $expected): void
     {
-        $class = new Calculation3($input);
+        $class = new Calculation4($input);
         $this->assertSame($expected, $class->calculation());
     }
 

@@ -57,3 +57,8 @@ When you find the symbol '@', it means the person has changed direction.
 When the first person reaches the '@', the spot is converted in a normal spot.
 If someone reaches the first or last position of the path (no matter if it is a '@') it means that there is no more steps to count, and the report must finish. 
 All the previous rules remains.
+
+INPUT: >...@..<
+OUTPUT: {}
+INPUT >...@..<..<
+OUTPUT: {X, X}
